@@ -1,4 +1,4 @@
-package designPatterns.creationalDesignPatterns.prototypePattern.impl;
+package designPatterns.creationalDesignPatterns.prototypePattern.deepClone;
 
 public class AntiPattern {
     public static void main(String[] args) {
