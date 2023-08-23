@@ -1,4 +1,4 @@
-package designPatterns.creationalDesignPatterns.singleton.doubleLock;
+package designPatterns.creationalDesignPatterns.singleton.doubleCheckedLock;
 
 public class Client {
     public static void main(String[] args) {
