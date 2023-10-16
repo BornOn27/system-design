@@ -1,4 +1,4 @@
-package designPatterns.creationalDesignPatterns.singleton.eager;
+package designPatterns.creationalDesignPatterns.singletonPattern.eager;
 
 public class DbConnection {
     /*

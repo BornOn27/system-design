@@ -1,6 +1,6 @@
-package designPatterns.creationalDesignPatterns.singleton.doubleCheckedLock;
+package designPatterns.creationalDesignPatterns.singletonPattern.lazy;
 
-public class DbConnection {
+public class AntiPatternDbConnection {
     /*
             Steps to Create Singleton Object
 
@@ -11,25 +11,22 @@ public class DbConnection {
 
 
     //Step-1
-    private static DbConnection dbInstance;
+    private static AntiPatternDbConnection dbInstance;
 
     /*
         But the problem in this approach is -
-            Multiple Servers Multiple Instance
+            If 2 different thread will execute this method at the same time, 2 instance will be created
      */
-    public static DbConnection getInstance(){
+    public static AntiPatternDbConnection getInstance(){
         if (dbInstance == null){
-            synchronized (DbConnection.class){
-                if(dbInstance == null)
-                    dbInstance = new DbConnection();
-            }
+            dbInstance = new AntiPatternDbConnection();
         }
         return dbInstance;
     }
 
 
     //Step-2
-    private DbConnection(){}
+    private AntiPatternDbConnection(){}
 
     public void isConnectionAvailable(){
         System.out.println("Connection Available !!!");

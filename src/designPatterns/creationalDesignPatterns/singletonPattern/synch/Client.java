@@ -1,4 +1,4 @@
-package designPatterns.creationalDesignPatterns.singleton.synch;
+package designPatterns.creationalDesignPatterns.singletonPattern.synch;
 
 
 public class Client {

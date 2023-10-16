@@ -1,4 +1,4 @@
-package designPatterns.creationalDesignPatterns.singleton.lazy;
+package designPatterns.creationalDesignPatterns.singletonPattern.lazy;
 
 public class Client {
     public static void main(String[] args) {

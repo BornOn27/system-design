@@ -1,4 +1,4 @@
-package designPatterns.creationalDesignPatterns.singleton.synch;
+package designPatterns.creationalDesignPatterns.singletonPattern.doubleCheckedLock;
 
 public class DbConnection {
     /*
@@ -15,11 +15,14 @@ public class DbConnection {
 
     /*
         But the problem in this approach is -
-            Every time lock is taken, which is not required once Object is created
+            Multiple Servers Multiple Instance
      */
-    public static synchronized DbConnection getInstance(){
+    public static DbConnection getInstance(){
         if (dbInstance == null){
-            dbInstance = new DbConnection();
+            synchronized (DbConnection.class){
+                if(dbInstance == null)
+                    dbInstance = new DbConnection();
+            }
         }
         return dbInstance;
     }
