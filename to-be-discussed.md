@@ -6,15 +6,15 @@
 
 # To be Studied
 
-- ElasticSearch Internals
-- SQS & Lambda Internals
-- Kafka, RabbitMq & Message Brokers Internals
-- DocumentDb Internals
-- Redis Internals
-- Temporal Internals
-- Indexing Internals, DB concepts and Optimisations
-- OpenTelemetry Internals
 - REST API Internals
+- Redis Internals
+- SQS & Lambda Internals
+- ElasticSearch Internals
+- Temporal Internals
+- OpenTelemetry Internals
+- DocumentDb Internals
+- Kafka, RabbitMq & Message Brokers Internals
+- Indexing Internals, DB concepts and Optimisations
 - Load Balancers Internals
 - Rate-limiting Implementation & Types
 - Top Engineering Problems
