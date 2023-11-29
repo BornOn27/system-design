@@ -12,9 +12,10 @@
 - ElasticSearch Internals
 - Temporal Internals
 - OpenTelemetry Internals
+- How ACID is ensured in DB?
+- Indexing Internals, DB concepts and Optimisations
 - DocumentDb Internals
 - Kafka, RabbitMq & Message Brokers Internals
-- Indexing Internals, DB concepts and Optimisations
 - Load Balancers Internals
 - Rate-limiting Implementation & Types
 - Top Engineering Problems
