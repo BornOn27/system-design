@@ -1,4 +1,4 @@
-package lowLevelDesign;
+package lowLevelDesign._001_urlShortener;
 
 import java.util.HashMap;
 import java.util.Map;
