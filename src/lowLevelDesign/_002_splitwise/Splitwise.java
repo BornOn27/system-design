@@ -1,13 +1,10 @@
 package lowLevelDesign._002_splitwise;
 
-import lowLevelDesign._002_splitwise.models.GroupMappings;
 import lowLevelDesign._002_splitwise.models.Groups;
 import lowLevelDesign._002_splitwise.models.Users;
-import lowLevelDesign._002_splitwise.service.*;
+import lowLevelDesign._002_splitwise.services.*;
 
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 public class Splitwise {

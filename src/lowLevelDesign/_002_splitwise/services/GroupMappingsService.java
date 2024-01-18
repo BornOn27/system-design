@@ -1,4 +1,4 @@
-package lowLevelDesign._002_splitwise.service;
+package lowLevelDesign._002_splitwise.services;
 
 import lowLevelDesign._002_splitwise.models.GroupMappings;
 import lowLevelDesign._002_splitwise.models.Groups;
