@@ -4,11 +4,11 @@ import lowLevelDesign._003_calender.models.EventDetails;
 import lowLevelDesign._003_calender.models.Events;
 import lowLevelDesign._003_calender.models.Frequency;
 
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.*;
+import java.time.temporal.ChronoUnit;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class FrequencyService {
@@ -22,30 +22,55 @@ public class FrequencyService {
 
     public List<Date> getAllSchedulesForEventDetails(EventDetails thisDetail, Date calenderStartDate, Date calenderEndDate) {
         List<Date> schedules = new ArrayList<>();
-        long diff = calenderEndDate.getTime() - calenderStartDate.getTime();
+
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String startDateString = formatter.format(calenderStartDate);
+        String endDateString = formatter.format(calenderEndDate);
+
+        schedules.add(calenderStartDate);
 
         switch (thisDetail.frequency.frequency.toUpperCase()){
             case "EVERY_DAY":
-                long numberOfDays = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+                long numberOfDays = ChronoUnit.DAYS.between(LocalDate.parse(startDateString),
+                        LocalDate.parse(endDateString));
 
-                schedules.add(thisDetail.frequency.startDate);
-
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTime(thisDetail.frequency.startDate);
-
+                Calendar everyDayCalender = null;
                 for (int i = 1; i <= numberOfDays; i++) {
-                    calendar.add(Calendar.DATE, i);
-                    schedules.add(calendar.getTime());
+                    everyDayCalender = Calendar.getInstance();
+                    everyDayCalender.add(Calendar.DATE, i);
+                    schedules.add(everyDayCalender.getTime());
                 }
-                schedules.add(thisDetail.frequency.endDate);
                 break;
             case "EVERY_MONTH":
+                long numberOfMonths = ChronoUnit.MONTHS.between(LocalDate.parse(startDateString),
+                        LocalDate.parse(endDateString));
+
+                Calendar everyMonthCalender = null;
+                for (int i = 1; i <= numberOfMonths; i++) {
+                    everyMonthCalender = Calendar.getInstance();
+                    everyMonthCalender.add(Calendar.MONTH, i);
+                    schedules.add(everyMonthCalender.getTime());
+                }
+
                 break;
             case "EVERY_YEAR":
+                long numberOfYears = ChronoUnit.YEARS.between(LocalDate.parse(startDateString),
+                        LocalDate.parse(endDateString));
+
+                Calendar everyYearCalender = null;
+                for (int i = 1; i <= numberOfYears; i++) {
+                    everyYearCalender = Calendar.getInstance();
+                    everyYearCalender.add(Calendar.YEAR, i);
+                    schedules.add(everyYearCalender.getTime());
+                }
+
                 break;
             default:
                 System.out.println("ERROR ::: No Frequency Provided");
         }
+
+        //End End-Date
+        schedules.add(thisDetail.frequency.endDate);
 
         return schedules;
     }

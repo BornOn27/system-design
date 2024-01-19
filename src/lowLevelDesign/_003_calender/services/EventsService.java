@@ -46,4 +46,28 @@ public class EventsService {
         List<EventDetails> eventDetailsList = eventDetailsService.getEventsDetailsForUserBetween(user, calenderStartDate, calenderEndDate);
         return eventsModelService.getEventDetails(eventDetailsList, calenderStartDate, calenderEndDate);
     }
+
+    public EventsModel updateEvent(EventsModel thisEvent){
+        EventsModel updatedEvent = null;
+
+        if(thisEvent.isParentEvent){
+            updatedEvent = updateParentEvent(thisEvent);
+        } else if(thisEvent.parentEventId == null){
+            //This will create another entry in the DB
+            updatedEvent = updateRecurringEvent(thisEvent);
+        }
+
+        return updatedEvent;
+    }
+
+    private EventsModel updateRecurringEvent(EventsModel thisEvent) {
+        return null;
+    }
+
+    private EventsModel updateParentEvent(EventsModel thisEvent) {
+        return null;
+    }
+
+
+
 }

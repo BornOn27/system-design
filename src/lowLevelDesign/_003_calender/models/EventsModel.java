@@ -52,4 +52,14 @@ public class EventsModel {
         this.sequenceNumber = sequenceNumber;
         this.scheduledAt = scheduledAt;
     }
+
+    @Override
+    public String toString() {
+        return  "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", type='" + type + '\'' +
+                ", isRepeating=" + isRepeating +
+                ", sequenceNumber=" + sequenceNumber +
+                ", scheduledAt=" + scheduledAt;
+    }
 }

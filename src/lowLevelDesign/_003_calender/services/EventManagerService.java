@@ -20,6 +20,11 @@ public class EventManagerService {
 
     public List<EventsModel> getEventsForUsersForDuration(Users user, Date startDate, Date endDate){
         List<EventsModel> userEventsInDuration = eventsService.getUserEventsBetween(user, startDate, endDate);
+        System.out.println("All Events for User:"+user+" Between :: "+startDate+":"+endDate);
+        for (EventsModel model : userEventsInDuration){
+            System.out.println(model);
+        }
+        System.out.println();
         return userEventsInDuration;
     }
 }
