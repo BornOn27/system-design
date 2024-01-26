@@ -1,0 +1,9 @@
+package lowLevelDesign._004_bookMyShow.v1_models;
+
+public class SeatDetails {
+    public Integer sdId;
+    public String seatNumber;
+    public String imageUrl;
+    public String type;
+    public Integer premium;
+}

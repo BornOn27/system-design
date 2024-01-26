@@ -1,0 +1,12 @@
+package lowLevelDesign._004_bookMyShow.v1_models;
+
+import java.util.Date;
+
+public class Shows {
+    public Integer sId;
+    public Movies movies;
+    public Date startTime;
+    public Date endTime;
+    public Integer price;
+    public CinemaHall cinemaHall;
+}

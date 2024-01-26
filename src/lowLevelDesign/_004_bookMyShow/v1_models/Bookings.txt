@@ -1,0 +1,10 @@
+package lowLevelDesign._004_bookMyShow.v1_models;
+
+import java.util.List;
+
+public class Bookings {
+    public Integer bId;
+    public Users bookedBy;
+    public Payments payments;
+    public List<Shows> shows;
+}

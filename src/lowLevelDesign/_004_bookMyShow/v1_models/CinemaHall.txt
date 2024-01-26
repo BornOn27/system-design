@@ -1,0 +1,7 @@
+package lowLevelDesign._004_bookMyShow.v1_models;
+
+public class CinemaHall {
+    public Integer chId;
+    public Theater theater;
+    public SeatDetails seatDetails;
+}

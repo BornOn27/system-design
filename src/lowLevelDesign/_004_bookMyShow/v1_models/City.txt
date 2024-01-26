@@ -1,0 +1,6 @@
+package lowLevelDesign._004_bookMyShow.v1_models;
+
+public class City {
+    public Integer cId;
+    public String name;
+}

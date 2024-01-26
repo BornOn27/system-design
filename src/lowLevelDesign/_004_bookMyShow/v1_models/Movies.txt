@@ -1,0 +1,8 @@
+package lowLevelDesign._004_bookMyShow.v1_models;
+
+public class Movies {
+    public Integer mId;
+    public String name;
+    public Integer duration;
+    public Integer basePrice;
+}
